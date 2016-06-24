@@ -6,6 +6,13 @@ using System.Threading.Tasks;
 
 namespace COMP123_MidTermExam_300839820
 {
+
+        /*
+                Janelle Heron
+                300839820
+                Date created June 24 2016
+        
+         */
     /**
      * <summary>
      * This abstract class is a blueprint for all Lotto Games
@@ -30,6 +37,54 @@ namespace COMP123_MidTermExam_300839820
         // PUBLIC PROPERTIES ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
         // CREATE public properties here -----------------------------------------
+        public int ElementNumber
+        {
+            get
+            {
+                return this._elementNumber;
+            }
+
+            set
+            {
+                this._elementNumber = value;
+            }
+        }
+
+        public List<int> ElementList
+        {
+            get
+            {
+                return this._elementList; 
+                
+            }
+            
+        }
+
+        public List<int> NumberList
+        {
+            get
+            {
+                return this._numberList;
+            }
+
+        }
+
+        public Random random
+        {
+            get
+            {
+                return this._random;
+            }
+        }
+
+
+        public int SetSize
+        {
+            get { return this._setSize; }
+
+            set { this._setSize = value; }
+        }
+
 
         // CONSTRUCTORS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -49,7 +104,7 @@ namespace COMP123_MidTermExam_300839820
             // assign elementNumber local variable to the ElementNumber property
             this.ElementNumber = elementNumber;
 
-            // assign setSize local variable tot he SetSize property
+            // assign setSize local variable the SetSize property
             this.SetSize = setSize;
 
             // call the _initialize method
@@ -59,74 +114,32 @@ namespace COMP123_MidTermExam_300839820
             this._build();
         }
 
-        public List<int> ElementList
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
-
-        public int ElementNumber
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
-
-        public Random random
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
-
-        public int SetSize
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
-
-        public List<int> NumberList
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
 
         // PRIVATE METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+       
+
 
         // CREATE the private _initialize method here -----------------------------
+        private void _initialize()
+        {
+            _elementList = new List<int>();
+            _random = new Random();
+            _numberList = new List<int>();
+        }
 
         // CREATE the private _build method here -----------------------------------
+        private void _build()
+        {
+        
+            for (int i = 0; i < this.SetSize; i++)
+            {
+                this.NumberList.Add(i);
+            }
+        
+        }
+
 
         // OVERRIDEN METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
         /**
          * <summary>
          * Override the default ToString function so that it displays the current
@@ -137,6 +150,7 @@ namespace COMP123_MidTermExam_300839820
          * @method ToString
          * @returns {string}
          */
+
         public override string ToString()
         {
             // create a string variable named lottoNumberString and intialize it with the empty string
@@ -151,23 +165,34 @@ namespace COMP123_MidTermExam_300839820
 
             return lottoNumberString;
         }
-
-        public void _build()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void _intialize()
-        {
-            throw new System.NotImplementedException();
-        }
-
+        // PUBLIC METHODS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++        
         public void PickElements()
         {
-            throw new System.NotImplementedException();
-        }
 
-        // PUBLIC METHODS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            //If the number of elements found in ElementList is greater than 0 
+
+            if (ElementList.Count > 0)
+            {
+
+                this.NumberList.Clear();
+                this.ElementList.Clear();
+                this._build();
+            }
+
+
+            for (int i = 0; i < this.SetSize; i++)
+            {
+
+
+                int random = this.Random.Next(1, 7); //Gotta fix this! 
+
+                this.ElementList.Add(this.NumberList.(random));
+            }
+        }
+    }
+
+
+
 
         // CREATE the public PickElements method here ----------------------------
     }
