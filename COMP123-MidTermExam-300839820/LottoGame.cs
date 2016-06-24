@@ -17,6 +17,12 @@ namespace COMP123_MidTermExam_300839820
      */
     public abstract class LottoGame
     {
+        private List<int> _elementList;
+        private int _elementNumber;
+        private List<int> _numberList;
+        private Random _random;
+        private int _setSize;
+
         // PRIVATE INSTANCE VARIABLES +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
         // CREATE private fields here --------------------------------------------
@@ -53,6 +59,66 @@ namespace COMP123_MidTermExam_300839820
             this._build();
         }
 
+        public List<int> ElementList
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
+        public int ElementNumber
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
+        public Random random
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
+        public int SetSize
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
+        public List<int> NumberList
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
         // PRIVATE METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
         // CREATE the private _initialize method here -----------------------------
@@ -84,6 +150,21 @@ namespace COMP123_MidTermExam_300839820
             }
 
             return lottoNumberString;
+        }
+
+        public void _build()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void _intialize()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void PickElements()
+        {
+            throw new System.NotImplementedException();
         }
 
         // PUBLIC METHODS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
